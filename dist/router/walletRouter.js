@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const walletController_1 = require("../Controller/walletController");
+const wallet = (0, express_1.Router)();
+wallet.route("/:userID/request-loan").post(walletController_1.requestLoan);
+wallet.route("/:userID/pay-loan").post(walletController_1.payLoan);
+wallet.route("/:userID/check-out").post(walletController_1.checkoutWithPayStack);
+wallet.route("/check-BIN").post(walletController_1.checkBIN);
+exports.default = wallet;
